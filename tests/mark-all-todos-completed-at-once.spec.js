@@ -1,5 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const { HomePage } = require('../page-objects/home-page');
+const { TODO_ITEMS } = require('../page-objects/test-data/TODO_ITEMS');
 require('dotenv').config();
 
 
@@ -7,12 +8,6 @@ test.beforeEach(async ({ page }) => {
     const homePage = new HomePage(page);
     homePage.navigate();
 });
-
-const TODO_ITEMS = [
-    'buy some cheese',
-    'feed the cat',
-    'book a doctors appointment'
-];
 
 test.describe('Mark all items as completed', () => {
 
