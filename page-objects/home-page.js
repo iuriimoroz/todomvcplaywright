@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { BasePage } = require('./base-page');
+const { Button } = require('../page-factory/button')
 
 exports.HomePage = class HomePage extends BasePage {
   constructor(page) {
@@ -13,7 +14,6 @@ exports.HomePage = class HomePage extends BasePage {
     this.ToogleAll = '.toggle-all';
     this.ToDoItems = '.todo-list li';
     this.Edit = '.edit';
-    this.DestroyButton = '//button[@class="destroy"]';
     this.ClearCompleted = '.clear-completed';
   }
 

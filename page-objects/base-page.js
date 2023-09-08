@@ -1,7 +1,7 @@
 require('dotenv').config();
 const test = require('@playwright/test');
 
-exports.BasePage =class BasePage {
+exports.BasePage = class BasePage {
   constructor(page) {
     this.page = page;
   }
