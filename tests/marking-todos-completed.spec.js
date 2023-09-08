@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const { HomePage } = require('../page-objects/home-page');
-const { TODO_ITEMS } = require('../page-objects/test-data/TODO_ITEMS');
+const { TODO_ITEMS } = require('../test-data/TODO_ITEMS');
 require('dotenv').config();
 
 
