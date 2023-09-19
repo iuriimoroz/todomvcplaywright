@@ -1,5 +1,5 @@
-const { test } = require('@playwright/test');
-const { Component, BaseComponent } = require('./base-component');
+import '@playwright/test';
+import { BaseComponent } from '../page-factory';
 
 exports.Label = class Label extends BaseComponent {
     constructor({ page, locator}) {

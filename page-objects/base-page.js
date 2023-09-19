@@ -1,7 +1,7 @@
-require('dotenv').config();
-const test = require('@playwright/test');
+import dotenv from 'dotenv';
+dotenv.config();
 
-exports.BasePage = class BasePage {
+export class BasePage {
   constructor(page) {
     this.page = page;
   }

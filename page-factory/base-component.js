@@ -1,8 +1,11 @@
-const { expect, test } = require('@playwright/test');
+import '@playwright/test';
 
-exports.BaseComponent = class BaseComponent {
+export class BaseComponent {
   constructor({ page, locator }) {
     this.page = page;
     this.locator = locator;
+  }
+  getLocator() {
+    return this.locator;
   }
 }
