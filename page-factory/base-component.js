@@ -7,5 +7,5 @@ export class BaseComponent {
   }
   getLocator() {
     return this.locator;
-  }
+  };
 }
