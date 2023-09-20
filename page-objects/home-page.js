@@ -6,12 +6,12 @@ exports.HomePage = class HomePage extends BasePage {
   constructor(page) {
     super(page);
     this.newTodoField = new Input({page, locator: '.new-todo'});
-    this.toDoItemLocator = new Label({page: page, locator: 'label'}).getLocator();
-    this.destroyButtonLocator = new Button({page: page, locator: '//button[@class="destroy"]'}).getLocator();
-    this.clearCompletedButtonLocator = new Button({page: page, locator: '.clear-completed'}).getLocator();
-    this.toDoItemsListLocator = new List({page: page, locator: '.todo-list li'}).getLocator();
-    this.toDoCounterLocator = new Span({page: page, locator: '.todo-count'}).getLocator();
-    this.toogleLocator = new Input({page: page, locator: '.toggle'}).getLocator();
+    this.destroyButton = new Button({page: page, locator: '//button[@class="destroy"]'});
+    this.toDoCounter = new Span({page: page, locator: '.todo-count'});
+    this.toDoItem = new Label({page: page, locator: 'label'});
+    this.clearCompletedButton = new Button({page: page, locator: '.clear-completed'});
+    this.toDoItemsList = new List({page: page, locator: '.todo-list li'});
+    this.toogle = new Input({page: page, locator: '.toggle'});
   }
 
   async createDefaultTodos(todoItems) {

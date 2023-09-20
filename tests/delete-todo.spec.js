@@ -16,23 +16,23 @@ test.describe('Delete items in todo list', () => {
         await homePage.createDefaultTodos(TODO_ITEMS);
 
         // Ensure that items were added
-        await expect(page.locator(homePage.toDoCounterLocator)).toHaveText('3 items left');
+        await homePage.toDoCounter.shouldHaveText('3 items left');
 
         // Check first item
-        const firstTodo = page.locator(homePage.toDoItemsListLocator).first();
-        await firstTodo.locator(homePage.toogleLocator).check();
+        const firstTodo = homePage.toDoItemsList.getLocator().first();
+        await homePage.toogle.getLocator().first().check();
         await expect(firstTodo).toHaveClass('completed');
-        await expect(page.locator(homePage.toDoCounterLocator)).toHaveText('2 items left');
+        await homePage.toDoCounter.shouldHaveText('2 items left');
 
         // Assert completed todo
         await expect(firstTodo).toHaveClass('completed');
 
         // Delete completed first todo
-        await page.locator(homePage.destroyButtonLocator).first().click();
+        await homePage.destroyButton.click();
 
         // Assert that the number of todos reduced
-        await expect(page.locator(homePage.toDoCounterLocator)).toHaveText('2 items left');
-        await expect(page.locator(homePage.toDoItemsListLocator)).toHaveText([
+        await homePage.toDoCounter.shouldHaveText('2 items left');
+        await homePage.toDoItemsList.shouldHaveText([
             TODO_ITEMS[1],
             TODO_ITEMS[2]
         ]);
