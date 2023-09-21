@@ -1,5 +1,5 @@
 import { BasePage } from '../page-objects';
-import { Button, Input, Label, List, Span } from '../page-factory';
+import { Button, Input, Label, List, Span, Body, Footer } from '../page-factory';
 
 
 exports.HomePage = class HomePage extends BasePage {
@@ -11,6 +11,8 @@ exports.HomePage = class HomePage extends BasePage {
     this.toDoItem = new Label({page: page, locator: 'label'});
     this.clearCompletedButton = new Button({page: page, locator: '.clear-completed'});
     this.toDoItemsList = new List({page: page, locator: '.todo-list li'});
+    this.body = new Body({page: page, locator: '.main'});
+    this.footer = new Footer({page: page, locator: '.footer'});
   }
 
   async createDefaultTodos(todoItems) {
