@@ -11,7 +11,6 @@ exports.HomePage = class HomePage extends BasePage {
     this.toDoItem = new Label({page: page, locator: 'label'});
     this.clearCompletedButton = new Button({page: page, locator: '.clear-completed'});
     this.toDoItemsList = new List({page: page, locator: '.todo-list li'});
-    this.toogle = new Input({page: page, locator: '.toggle'});
   }
 
   async createDefaultTodos(todoItems) {
@@ -24,5 +23,8 @@ exports.HomePage = class HomePage extends BasePage {
         console.error(`Failed to create todo: ${item}`);
       }
     }
+  }
+  async checkTodoByText(todoText) {
+    await this.page.locator(`//label[text()="${todoText}"]/..//input[@class="toggle"] `).check();
   }
 }
