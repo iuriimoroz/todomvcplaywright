@@ -8,8 +8,8 @@ test.describe('Clear completed items', () => {
     test.beforeEach(async ({ page }) => {
         homePage = new HomePage(page);
         homePage.navigate();
-
     });
+    
     test('Verify that it is posible to clear comleted items', async ({ page }) => {
         homePage = new HomePage(page);
 

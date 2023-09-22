@@ -45,4 +45,11 @@ exports.HomePage = class HomePage extends BasePage {
   async getTodoItemLocatorByText(todoText) {
     return await this.page.locator(`//label[text()="${todoText}"]/../..`);
   }
+
+  async updateTodoItem(todoText, newTodoText) {
+    await this.page.locator(`text=${todoText}`).dblclick();
+    const todoItemInput = this.page.locator(`//input[@class="edit"]`);
+    await todoItemInput.fill(newTodoText);
+    await todoItemInput.press('Enter');
+  }
 }
