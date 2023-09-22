@@ -26,7 +26,23 @@ exports.HomePage = class HomePage extends BasePage {
       }
     }
   }
+
+  async createTodoItem(todoItem) {
+    const { newTodoField } = this;{
+      try {
+        await newTodoField.fill(todoItem);
+        await newTodoField.press('Enter');
+      } catch (error) {
+        console.error(`Failed to create todo: ${todoItem}`);
+      }
+    }
+  }
+
   async checkTodoByText(todoText) {
     await this.page.locator(`//label[text()="${todoText}"]/..//input[@class="toggle"] `).check();
+  }
+
+  async getTodoItemLocatorByText(todoText) {
+    return await this.page.locator(`//label[text()="${todoText}"]/../..`);
   }
 }

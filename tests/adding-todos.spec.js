@@ -14,15 +14,13 @@ test.describe('Add new items to todo list', () => {
         homePage = new HomePage(page);
         
         // Create 1st todo
-        await homePage.newTodoField.fill(TODO_ITEMS[0]);
-        await homePage.newTodoField.press('Enter');
+        await homePage.createTodoItem(TODO_ITEMS[0])
 
         // Make sure the list only has one todo item
         await homePage.toDoItemsList.shouldHaveText(TODO_ITEMS[0]);
 
         // Create 2nd todo
-        await homePage.newTodoField.fill(TODO_ITEMS[1]);
-        await homePage.newTodoField.press('Enter');
+        await homePage.createTodoItem(TODO_ITEMS[1])
 
         // Make sure the list now has two todo items
         await homePage.toDoItemsList.shouldHaveText([
@@ -35,8 +33,7 @@ test.describe('Add new items to todo list', () => {
         homePage = new HomePage(page);
 
         // Create one todo item
-        await homePage.newTodoField.fill(TODO_ITEMS[0]);
-        await homePage.newTodoField.press('Enter');
+        await homePage.createTodoItem(TODO_ITEMS[0])
 
         // Check that input is empty
         await expect(homePage.newTodoField.getLocator()).toBeEmpty();
@@ -46,8 +43,7 @@ test.describe('Add new items to todo list', () => {
         homePage = new HomePage(page);
         
         // Create a todo
-        await homePage.newTodoField.fill(TODO_ITEMS[0]);
-        await homePage.newTodoField.press('Enter');
+        await homePage.createTodoItem(TODO_ITEMS[0])
     
         // Make sure that main body with the todo appeared as well as a footer
         await expect(homePage.body.getLocator()).toBeVisible();
