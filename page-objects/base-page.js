@@ -8,4 +8,7 @@ export class BasePage {
   async navigate() {
     await this.page.goto(process.env.BASE_URL);
   }
+  async reload() {
+    await this.page.reload();
+  }
 }

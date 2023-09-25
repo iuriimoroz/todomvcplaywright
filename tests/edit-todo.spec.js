@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { HomePage } from '../page-objects';
 import { TODO_ITEMS } from '../test-data/todo_items';
 
@@ -11,7 +11,7 @@ test.describe('User can update an item using double click', () => {
     });
 
     test('Verify that it is possible to edit an item using double click', async ({ page }) => {
-        const homePage = new HomePage(page);
+        homePage = new HomePage(page);
 
         // Create 3 items
         await homePage.createDefaultTodos(TODO_ITEMS);

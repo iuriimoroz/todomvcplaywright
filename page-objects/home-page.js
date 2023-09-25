@@ -42,8 +42,16 @@ exports.HomePage = class HomePage extends BasePage {
     await this.page.locator(`//label[text()="${todoText}"]/..//input[@class="toggle"] `).check();
   }
 
+  async unCheckTodoByText(todoText) {
+    await this.page.locator(`//label[text()="${todoText}"]/..//input[@class="toggle"] `).uncheck();
+  }
+
   async getTodoItemLocatorByText(todoText) {
     return await this.page.locator(`//label[text()="${todoText}"]/../..`);
+  }
+
+  async markAllTodosAsCompleted() {
+    await this.page.locator('text=Mark all as complete').click();
   }
 
   async updateTodoItem(todoText, newTodoText) {
