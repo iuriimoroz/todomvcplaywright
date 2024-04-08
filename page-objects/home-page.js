@@ -51,12 +51,12 @@ exports.HomePage = class HomePage extends BasePage {
   }
 
   async markAllTodosAsCompleted() {
-    await this.page.locator('text=Mark all as complete').click();
+    await this.page.locator('//input[@class="toggle-all"]').click();
   }
 
   async updateTodoItem(todoText, newTodoText) {
     await this.page.locator(`text=${todoText}`).dblclick();
-    const todoItemInput = this.page.locator(`//input[@class="edit"]`);
+    const todoItemInput = this.page.locator(`//*[@id="edit-todo-input"]`);
     await todoItemInput.fill(newTodoText);
     await todoItemInput.press('Enter');
   }
