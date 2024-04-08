@@ -10,8 +10,7 @@ test.describe('Mark some todo items as completed', () => {
         homePage.navigate();
     });
 
-    test('Verify that user can mark todo item/items as completed', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that user can mark todo item/items as completed', async ({}) => {
 
         // Create 3 items
         await homePage.createDefaultTodos(TODO_ITEMS);

@@ -10,8 +10,7 @@ test.describe('Add new items to todo list', () => {
         homePage.navigate();
 
     });
-    test('Verify that new items were added to the list', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that new items were added to the list', async ({}) => {
         
         // Create 1st todo
         await homePage.createTodoItem(TODO_ITEMS[0])
@@ -29,8 +28,7 @@ test.describe('Add new items to todo list', () => {
         ]);
     });
 
-    test('Verify that text input field is cleared when a new item was added', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that text input field is cleared when a new item was added', async ({}) => {
 
         // Create one todo item
         await homePage.createTodoItem(TODO_ITEMS[0])
@@ -39,8 +37,7 @@ test.describe('Add new items to todo list', () => {
         await expect(homePage.newTodoField.getLocator()).toBeEmpty();
     });
 
-    test('Verify that footer with current state appears as soon as first item was added', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that footer with current state appears as soon as first item was added', async ({}) => {
         
         // Create a todo
         await homePage.createTodoItem(TODO_ITEMS[0])

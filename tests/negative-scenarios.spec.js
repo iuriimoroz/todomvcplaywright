@@ -10,8 +10,7 @@ test.describe('Negavive scenarios', () => {
         homePage.navigate();
     });
 
-    test('Verify that duplicate items are not allowed', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that duplicate items are not allowed', async ({}) => {
 
         // Create 3 items
         await homePage.createDefaultTodos(TODO_ITEMS);
@@ -30,8 +29,7 @@ test.describe('Negavive scenarios', () => {
         ]);
     });
 
-    test('Verify that empty todo item is not allowed (only spaces)', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that empty todo item is not allowed (only spaces)', async ({}) => {
 
         // Create 1st todo
         await homePage.createTodoItem(TODO_ITEMS[0])
@@ -46,8 +44,7 @@ test.describe('Negavive scenarios', () => {
         await homePage.toDoItemsList.shouldHaveText(TODO_ITEMS[0]);
     });
 
-    test('Verify that todo items are not lost after refreshing the page', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that todo items are not lost after refreshing the page', async ({}) => {
 
         // Create 3 items
         await homePage.createDefaultTodos(TODO_ITEMS);

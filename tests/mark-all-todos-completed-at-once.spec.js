@@ -10,8 +10,7 @@ test.describe('Mark all items as completed', () => {
         homePage.navigate();
     });
 
-    test('Verify that it is possible to mark all items as completed by clicking on mark all checkbox', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that it is possible to mark all items as completed by clicking on mark all checkbox', async ({}) => {
 
         // Create 3 items
         await homePage.createDefaultTodos(TODO_ITEMS);

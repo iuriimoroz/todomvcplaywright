@@ -10,8 +10,7 @@ test.describe('Clear completed items', () => {
         homePage.navigate();
     });
     
-    test('Verify that it is posible to clear comleted items', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that it is posible to clear comleted items', async ({}) => {
 
         // Create 3 items
         await homePage.createDefaultTodos(TODO_ITEMS);

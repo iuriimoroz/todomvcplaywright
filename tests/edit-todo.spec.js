@@ -10,8 +10,7 @@ test.describe('User can update an item using double click', () => {
         homePage.navigate();
     });
 
-    test('Verify that it is possible to edit an item using double click', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that it is possible to edit an item using double click', async ({}) => {
 
         // Create 3 items
         await homePage.createDefaultTodos(TODO_ITEMS);

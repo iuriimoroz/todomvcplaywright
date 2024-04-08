@@ -10,8 +10,7 @@ test.describe('Delete items in todo list', () => {
         homePage.navigate();
     });
 
-    test('Verify that user can delete completed item/items from todo list', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that user can delete completed item/items from todo list', async ({}) => {
 
         // Create 3 items
         await homePage.createDefaultTodos(TODO_ITEMS);

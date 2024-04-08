@@ -10,8 +10,7 @@ test.describe('User can uncomplete previously completed item', () => {
         homePage.navigate();
     });
 
-    test('Verify that user can make previosly completed item as active', async ({ page }) => {
-        homePage = new HomePage(page);
+    test('Verify that user can make previosly completed item as active', async ({}) => {
 
         // Create 3 items
         await homePage.createDefaultTodos(TODO_ITEMS);
